@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>scenarios example</title>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-ui.js"></script>
+    <script type="text/javascript" src="lib/underscore-1.3.3.js"></script>
+    <script type="text/javascript" src="js/scenarios-example.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/angular-ui.css">
+    <link rel="stylesheet" href="css/scenarios-example.css">
+</head>
+<body>
+<div class="container">
+    <section class="eg1" ng-init="eg1.output='clicking the button should copy the value here'">
+        <h2>Simple click and assert value present in textbox and span.</h2>
+
+        <p>
+            <input ng-model="eg1.input">
+            <button ng-click="eg1.output = eg1.input" class="btn">click me</button>
+        </p>
+        <p>a span: <span class="output">{{eg1.output}}</span></p>
+
+        <p>an input: <input ng-model="eg1.output"></p>
+    </section>
+    <section class="eg2" ng-controller="Eg2Ctrl">
+        <h2>Copy a selected value to another select.</h2>
+
+        <p>
+            <select ng-model="eg2.input" ng-options="o.label for o in eg2.options"></select>
+            <button ng-click="eg2.output = eg2.input" class="btn">click me</button>
+        </p>
+        <p>
+            a select: <select ng-model="eg2.output" ng-options="o.label for o in eg2.options"></select>
+        </p>
+    </section>
+    <section class="eg3" ng-controller="Eg3Ctrl">
+        <h2>Interact with and assert on elements created in a repeater.</h2>
+        <p ng-repeat="text in eg3.texts" ng-class="'field_' + ($index+1)">
+            <input ng-model="text.from">
+            <button ng-click="text.from = text.to" class="btn">change text</button>
+        </p>
+    </section>
+    <section class="eg4" ng-controller="Eg4Ctrl">
+        <h2>Interact with and assert on elements created in a repeater using other fields to find them.</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Field 1</th>
+                <th>Field 2</th>
+                <th>Action</th>
+                <th>Concat</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="row in eg4.rows" class="entity">
+                <td class="field1">{{row.field1}}</td>
+                <td class="field2">{{row.field2}}</td>
+                <td><button class="btn" ng-click="concatenate(row)">concat</button></td>
+                <td class="concat">{{row.concat}}</td>
+            </tr>
+        </table>
+    </section>
+</div>
+</body>
+</html>
