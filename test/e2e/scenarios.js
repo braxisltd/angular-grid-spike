@@ -27,9 +27,8 @@ describe('Scenarios examples', function () {
 
     describe('Example 2: Select value should be copied to another select.', function () {
 
-        var expected = "Option 2";
-
         it('value should be copied into another input', function () {
+            var expected = "Option 2";
             select("eg2.input").option(expected);
             element(".eg2 .btn").click();
             expect(select("eg2.output").selectedOption()).toEqual(expected);
@@ -38,8 +37,6 @@ describe('Scenarios examples', function () {
     });
 
     describe('Example 3: Interacting with and asserting on elements created in repeaters.', function () {
-
-
 
         it('Second input should have its value updated (Using element index selectors).', function () {
             using(".eg3 p:eq(1)").element("button").click();
