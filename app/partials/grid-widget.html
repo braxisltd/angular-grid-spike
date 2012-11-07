@@ -1,8 +1,14 @@
 <div class="grid" ng-init="page=1;pageSize=3">
-    <table>
+    <table class="table table-bordered table-hover">
         <thead>
         <tr>
-            <th ng-repeat="c in data.head.columns">{{c.label}}</th>
+            <th ng-repeat="c in data.head.columns">
+                <span>{{c.label}}</span>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">d</a>
+                    <input type="text" class="input-medium">
+                </div>
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -11,9 +17,16 @@
         </tr>
         </tbody>
     </table>
-    <div class="paginator" ng-show="data.body.rows.length > pageSize">
-        <img src="img/prev.png" alt="Previous page" ng-click="previousPage()">
-        <span>Page {{page}} of {{totalPages()}}</span>
-        <img src="img/next.png" alt="Next page" ng-click="nextPage()">
+    <!--<div class="paginator" ng-show="data.body.rows.length > pageSize">-->
+        <!--<img src="img/prev.png" alt="Previous page" ng-click="previousPage()">-->
+        <!--<span>Page {{page}} of {{totalPages()}}</span>-->
+        <!--<img src="img/next.png" alt="Next page" ng-click="nextPage()">-->
+    <!--</div>-->
+    <div class="pagination">
+      <ul>
+        <li ng-class="{true:'active'}[page == 1]"><a href="#" ng-click="previousPage()"><i class="icon-chevron-left"></i>prev</a></li>
+        <li ng-repeat="pg in pages()" ng-class="{true:'active'}[pg == page]"><a href="#" ng-click="changePage(pg)"><span ng-bind="pg"></span></a></li>
+        <li ng-class="{true:'active'}[page == totalPages()]"><a href="#" ng-click="nextPage()">next<i class="icon-chevron-right"></i></a></li>
+      </ul>
     </div>
 </div>

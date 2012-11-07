@@ -12,7 +12,7 @@ app.directive("braxisGrid", function () {
         templateUrl:'partials/grid-widget.html',
         replace:true,
         transclude:false,
-        restrict:'E',
+        restrict:'EA',
         controller:GridCtrl,
         scope:{
             "data":"=gridData"
@@ -34,5 +34,12 @@ function GridCtrl($scope) {
             $scope.page++;
         }
     };
+    $scope.changePage = function (page) {
+        $scope.page = page;
+    };
+    $scope.pages = function () {
+        return _.range(1, $scope.totalPages() + 1);
+    }
+
 }
 

@@ -7,17 +7,17 @@ div.grid {
     height: 100%;
 }
 
-td, th {
-    border: 1px solid #cccccc;
-}
+/*td, th {*/
+    /*border: 1px solid #cccccc;*/
+/*}*/
 
-th {
-    background-color: #eeeeee
-}
+/*th {*/
+    /*background-color: #eeeeee*/
+/*}*/
 
-td {
-    padding: 3px;
-}
+/*td {*/
+    /*padding: 3px;*/
+/*}*/
 
 td input {
     width: 100%;
@@ -42,5 +42,5 @@ td input {
 
 /* GENERAL PAGE */
 div.grid-container {
-    height: 250px;
+    height: 300px;
 }
