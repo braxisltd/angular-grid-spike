@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 23.0 (Windows)" package="e2e" timestamp="2012-11-19T21:03:14" id="0" hostname="bigdog" tests="5" errors="1" failures="0" time="0">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"/>
+    </properties>
+    <system-out/>
+    <system-err/>
+  </testsuite>
+  <testsuite name="Chrome 23.0 (Windows)" package="e2e" timestamp="2012-11-19T21:03:14" id="0" hostname="bigdog" tests="5" errors="1" failures="0" time="0">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"/>
+    </properties>
+    <system-out/>
+    <system-err/>
+  </testsuite>
+</testsuites>

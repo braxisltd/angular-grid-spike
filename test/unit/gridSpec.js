@@ -57,4 +57,8 @@ describe('GridCtrl', function () {
         expect(scope.totalPages()).toEqual(2);
     });
 
+    it('should fail', function() {
+
+    });
+
 });
