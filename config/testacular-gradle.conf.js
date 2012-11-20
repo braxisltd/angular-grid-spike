@@ -1,5 +1,7 @@
 basePath = '../';
 
+reporters = ['coverage'];
+
 files = [
   JASMINE,
   JASMINE_ADAPTER,
@@ -9,6 +11,10 @@ files = [
   'app/js/**/*.js',
   'test/unit/**/*.js'
 ];
+
+preprocessors = {
+  '**/app/js/*.js': 'coverage'
+};
 
 autoWatch = false;
 
@@ -21,4 +27,9 @@ reporters = ['junit'];
 junitReporter = {
   outputFile: 'build/testacular-unit.xml',
   suite: 'unit'
+};
+
+coverageReporter = {
+  type : 'html',
+  dir : 'coverage/'
 };

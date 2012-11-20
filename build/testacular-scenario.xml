@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 23.0 (Windows)" package="e2e" timestamp="2012-11-19T21:03:14" id="0" hostname="bigdog" tests="5" errors="1" failures="0" time="0">
+  <testsuite name="Chrome 23.0 (Windows)" package="e2e" timestamp="2012-11-20T19:24:27" id="0" hostname="bigdog" tests="4" errors="0" failures="0" time="0.889">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"/>
     </properties>
-    <system-out/>
-    <system-err/>
-  </testsuite>
-  <testsuite name="Chrome 23.0 (Windows)" package="e2e" timestamp="2012-11-19T21:03:14" id="0" hostname="bigdog" tests="5" errors="1" failures="0" time="0">
-    <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"/>
-    </properties>
+    <testcase name="value should be copied into another input" time="0.317" classname="e2e Chrome 23.0 (Windows).Scenarios examples Example 1: Simple click and assert value present in textbox and span_"/>
+    <testcase name="value should be copied into a span" time="0.202" classname="e2e Chrome 23.0 (Windows).Scenarios examples Example 1: Simple click and assert value present in textbox and span_"/>
+    <testcase name="value should be copied into another input" time="0.213" classname="e2e Chrome 23.0 (Windows).Scenarios examples Example 2: Select value should be copied to another select_"/>
+    <testcase name="Second input should have its value updated (Using element index selectors)." time="0.157" classname="e2e Chrome 23.0 (Windows).Scenarios examples Example 3: Interacting with and asserting on elements created in repeaters_"/>
     <system-out/>
     <system-err/>
   </testsuite>

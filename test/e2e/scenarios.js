@@ -46,13 +46,4 @@ describe('Scenarios examples', function () {
 
     });
 
-    describe('Example 3: Interact with and assert on elements created in a repeater using other fields to find them.', function () {
-
-        it('Second input should have its value updated (Using class selectors).', function () {
-            repeater("eg4 tr").row(1).behaviour(function(error, result) {
-                dump(result);
-            });
-        });
-
-    });
 });

@@ -1,33 +1,27 @@
 task jstest(description: 'runs js unit tests') {
     doLast {
-        def testacular = "c:/Users/Darren/AppData/Roaming/npm/testacular.cmd start ${new File("config/testacular-gradle.conf.js").canonicalPath}"
+        def testacular = "${new File("node_modules/.bin/testacular.cmd").canonicalPath} start ${new File("config/testacular-gradle.conf.js").canonicalPath}"
         testacular.execute().text
         def testsuites = new XmlSlurper().parse(new File("build/testacular-unit.xml"))
         def errors = testsuites.testsuite.@errors.text().asType(Integer.class)
         def failures = testsuites.testsuite.@failures.text().asType(Integer.class)
         if (errors > 0 || failures > 0) {
-            throw new Exception("Failures: ${failures}, Errors: ${errors}")
+            throw new GradleException("Failures: ${failures}, Errors: ${errors}")
         }
     }
 }
 
 task scenariotest(description: 'runs js scenario tests') {
     doLast {
-        new Thread() {
-            public void run() {
-                def node = "\"c:/Program Files/nodejs/node\" ${new File("scripts/web-server.js").canonicalPath}"
-                println(node.execute().text)
-                Thread.sleep(10000)
-            }
-        }.start()
-        Thread.sleep(3000)
-        def testacular = "c:/Users/Darren/AppData/Roaming/npm/testacular.cmd start ${new File("config/testacular-e2e-gradle.conf.js").canonicalPath}"
+        def node = "node ${new File("scripts/web-server.js").canonicalPath}"
+        node.execute()
+        def testacular = "${new File("node_modules/.bin/testacular.cmd").canonicalPath} start ${new File("config/testacular-gradle.conf.js").canonicalPath}"
         testacular.execute().text
         def testsuites = new XmlSlurper().parse(new File("build/testacular-scenario.xml"))
         def errors = testsuites.testsuite.@errors.text().asType(Integer.class)
         def failures = testsuites.testsuite.@failures.text().asType(Integer.class)
         if (errors > 0 || failures > 0) {
-            throw new Exception("Failures: ${failures}, Errors: ${errors}")
+            throw new GradleException("Failures: ${failures}, Errors: ${errors}")
         }
     }
 }
