@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 23.0 (Windows)" package="unit" timestamp="2012-11-20T19:55:30" id="0" hostname="bigdog" tests="7" errors="0" failures="0" time="0.026">
+  <testsuite name="Chrome 23.0 (Windows)" package="unit" timestamp="2012-11-20T20:20:23" id="0" hostname="bigdog" tests="7" errors="0" failures="0" time="0.024">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"/>
     </properties>
-    <testcase name="should increment page even if the next page is not full." time="0.015" classname="unit Chrome 23.0 (Windows).GridCtrl Incrementing the page"/>
+    <testcase name="should increment page even if the next page is not full." time="0.013" classname="unit Chrome 23.0 (Windows).GridCtrl Incrementing the page"/>
     <testcase name="should not increment page if current page is last and incomplete" time="0.002" classname="unit Chrome 23.0 (Windows).GridCtrl Incrementing the page"/>
     <testcase name="should not increment page if current page is last and incomplete" time="0.003" classname="unit Chrome 23.0 (Windows).GridCtrl Incrementing the page"/>
     <testcase name="should decrement page even if the next page is not full." time="0.002" classname="unit Chrome 23.0 (Windows).GridCtrl Deccrementing the page"/>
