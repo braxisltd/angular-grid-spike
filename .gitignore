@@ -6,3 +6,6 @@ build.xml
 .project
 .settings
 .idea/*
+coverage/
+test_out/
+node_modules/

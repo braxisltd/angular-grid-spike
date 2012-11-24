@@ -1,6 +1,6 @@
 basePath = '../';
 
-reporters = ['coverage'];
+reporters = ['junit','coverage'];
 
 files = [
   JASMINE,
@@ -19,7 +19,7 @@ preprocessors = {
 
 autoWatch = false;
 
-browsers = ['Chrome'];
+browsers = ['Chrome','IE'];
 
 singleRun = true;
 
@@ -29,7 +29,7 @@ junitReporter = {
 };
 
 coverageReporter = {
-  type : 'html',
+  type : 'lcov',
   dir : 'coverage/'
 };
 

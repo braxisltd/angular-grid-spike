@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.fixedtable.js"></script>
+    <script type="text/javascript" src="js/fixed-grid.js"></script>
+    <link rel="stylesheet" href="css/fixed-grid.css">
+</head>
+<body id="ng-app" ng-app="fixed-grid" ng-controller="FixedGridCtrl">
+
+<div id="tableDiv_General" class="tableDiv">
+
+    <button ng-click="addRows()">add rows</button>
+    <div class="fixedArea">
+        <div class="fixedContainer" style="width: 759px; float: left;">
+            <div class="fixedHead" style="width: 776px; float: left; overflow: hidden;">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td ng-repeat="h in headers">{{h.label}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fixedTable" style="float: left; width: 776px; overflow: auto; height: 400px;">
+                <table id="Open_Text_General" class="FixedTables">
+                    <tbody>
+                    <tr ng-repeat="r in rows">
+                        <td ng-repeat="c in r.cells">{{c.value}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

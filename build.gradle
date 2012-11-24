@@ -1,4 +1,4 @@
-task jstest(description: 'runs js unit tests') {
+task jsunit(description: 'runs js unit tests') {
     doLast {
         def testacular = "${new File("node_modules/.bin/testacular.cmd").canonicalPath} start ${new File("config/testacular-gradle.conf.js").canonicalPath}"
         testacular.execute().text
@@ -11,7 +11,7 @@ task jstest(description: 'runs js unit tests') {
     }
 }
 
-task scenariotest(description: 'runs js scenario tests') {
+task jsscenario(description: 'runs js scenario tests') {
     doLast {
         def node = "node ${new File("scripts/web-server.js").canonicalPath}"
         node.execute()
